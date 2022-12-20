@@ -90,10 +90,10 @@ dontaudit
 
 ## SELinux Errors:
 ```
-It could mean that the labels are wrong
-It could mean that the policy needed to be tweak on booleans, policy modules.
-There could be a bug in the policy.
-Or worst youcould be under attack.
+* It could mean that the labels are wrong
+* It could mean that the policy needed to be tweak on booleans, policy modules.
+* There could be a bug in the policy.
+* Or worst youcould be under attack.
 ```
 
 ## For Booleans: 
