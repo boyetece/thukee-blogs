@@ -72,4 +72,4 @@ To prevent syslog messages from filling up the storage file, the log messages ca
 
 see `man logrotate` for details
 
-# Journald
+More update on this topic ......
