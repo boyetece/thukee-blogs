@@ -1,4 +1,4 @@
- STRATIS Storage:
+ # STRATIS Storage:
 
 Stratis is a volume management XFS filesystem to easily configure pools and filesystems with enhanced storage functionality that works within the existing Linux block device such as LVM but not on partitions.
 
