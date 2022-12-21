@@ -59,3 +59,5 @@ Using this option before installation helps you find out what is actually in the
 
 rpm -qR - Shows dependencies for a specific package.
 ```
+
+[Man Page Reference](https://www.man7.org/linux/man-pages/man1/ldd.1.html)
