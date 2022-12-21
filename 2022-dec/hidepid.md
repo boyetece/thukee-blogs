@@ -50,3 +50,5 @@ The directories representing PIDs are removed from `/proc`. The user emad can no
 Instead of changing mount options as your system runs, add the hidepid option to `/etc/fstab`.
 
 Securing your operating system is a continuous challenge, and with servers containing highly confidential data, it's important to think about what you want people to be able to stumble across on your system. Use hidepid to remove processes from casual inspection.
+
+[RedHat SysAdmin](https://www.redhat.com/sysadmin/hidepid-linux-hide-pid)
