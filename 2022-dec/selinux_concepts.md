@@ -235,4 +235,8 @@ server~$ touch / .autorelabel
 Reboot the machine
 
 
-Reference: [Redhat Summit](https://www.youtube.com/watch?v=_WOKRaM-HI4&t=614s)
+Reference: 
+
+[Redhat Summit](https://www.youtube.com/watch?v=_WOKRaM-HI4&t=614s) 
+
+[SELinux Project](http://selinuxproject.org/page/User_Resources?fbclid=IwAR3TLQXDDPdki2yIopE3_-gme6J4qlrHSanoiVeU1HAZNJwf__g-QQmGJmU)
