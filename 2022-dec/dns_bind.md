@@ -109,7 +109,7 @@ $TTL 86400
 #systemctl restart named
 ```
 
-## PERMISSION,OWNERSHIP and SELINUX
+## Permission,Ownership and SElinux
 ```
 #chgrp named -R /var/named
 #chown -v root:named /etc/named.conf
@@ -117,7 +117,7 @@ $TTL 86400
 #restorecon /etc/named.conf
 ```
 
-## TEST DNS CONFIG:
+## Test DNS config for error:
 ```
 #named-checkconf /etc/named.conf
 
