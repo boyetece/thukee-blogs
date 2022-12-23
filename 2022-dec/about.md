@@ -1,0 +1,1 @@
+`Thukee` is a resource blog site that focuses on linux learning, productivity and related certification guidance. Other resources in the blogs will greatly help in achieving this. We hope that our blogs will be helpful for you in learning the most trusted and secure operating system since 1990. Credits to `Linus Torvalds` and the `Linux Kernel` Community.
