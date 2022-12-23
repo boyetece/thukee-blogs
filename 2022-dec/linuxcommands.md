@@ -36,6 +36,10 @@ $ (reverse-i-search)'': {type anything that your previously type}
 $ history
 $ !102 {number of the previous commands displayed by history command}
 ```
+## Viewing an expected activity in progress such as disk space in realtime
+```
+$ watch df -h
+``` 
 ## Viewing the date and time within the command history
 ```
 $ HISTTIMEFORMAT="%Y-%m-%d %T "
