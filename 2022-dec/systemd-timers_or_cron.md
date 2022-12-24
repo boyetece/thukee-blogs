@@ -51,7 +51,7 @@ systemd units can do everything:
 
 1. action information.
 
-Systemd timers work the same way but split each concept into its own file. 2 unit files: a service and a timer. One benefit you'll notice right away is that this lets us start/test these service units independently of their timers.
+Systemd timers work the same way but split each concept into its own file with two unit files: a `service` and a `timer`. One benefit you'll notice right away is that this lets us start/test these service units independently of their timers.
 
 ## Create demo service
 ```
@@ -59,7 +59,7 @@ $ sudo vim /usr/local/bin/backup.sh
 ```
 ```
 #!/usr/bin/env bash
-echo "I just ran on $(date)"
+echo "I just ran a $(date)"
 exit 0
 ```
 
