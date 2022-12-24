@@ -195,7 +195,7 @@ server~$ restorecon -vR /data
 ```
 Checking for all existing directories and files for SElinux context
 ```
-server~$ semanage -l
+server~$ semanage fcontext -l
 ```
 OR
 ```
