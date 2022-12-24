@@ -190,12 +190,17 @@ server~$ journalctl -b -0
 But this time the options for appropriate context are too many to choose. But since the admin know he's' working on a webserver using `httpd_sys_content_t` would be appropriate.
 
 ```
-server~$ semanage fcontext -a -t httpd_sys_content_t "/data(/.*)?" server~$ restorecon -vR /data
+server~$ semanage fcontext -a -t httpd_sys_content_t "/data(/.*)?" 
+server~$ restorecon -vR /data
 ```
-
+Checking for all existing directories and files for SElinux context
+```
+server~$ semanage -l
+```
 OR
 ```
-server~$ semanage fcontext -a -e /var/www/html /data server~$ restorecon -vR /data
+server~$ semanage fcontext -a -e /var/www/html /data 
+server~$ restorecon -vR /data
 ```
 
 ## Example 4:
