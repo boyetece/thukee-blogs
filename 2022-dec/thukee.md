@@ -41,8 +41,13 @@ backend kavita
 Maintain the Content and Configuration on the Docker Host. When the container is created we can tell Docker to mount a local directory on the Docker host to a directory in the container. The NGINX image uses the default NGINX configuration, which uses `/usr/share/nginx/html` as the container’s root directory and puts configuration files in `/etc/nginx`. For a Docker host with content in the local directory `/var/www` and configuration files in `/var/nginx/conf`.
 
 ## docker run for nginx
+Note: Be sure to fix the SElinux file context in your host `/var/www` and `/var/nginx/conf` directories before creating the nginx container. Not doing so would result a `403 Forbiden` http error.
 ```
-# docker run --name thukee --mount type=bind source=/var/www,target=/usr/share/nginx/html,readonly --mount type=bind,source=/var/nginx/conf,target=/etc/nginx/conf,readonly -p 8000:80 -d nginx:latest
+podman run --name thukee -p 8000:80 \
+    -v /var/www:/usr/share/nginx/html \
+    -v /var/nginx/conf:/etc/nginx/conf \
+    --restart unless-stopped \
+    -d nginx:stable
 ```
  Any change made to the files in the local directories /var/www and /var/nginx/conf on the Docker host are reflected in the directories /usr/share/nginx/html and /etc/nginx in the container. The readonly option means these directories can be changed only on the Docker host, not from within the container.
 
