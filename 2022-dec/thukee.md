@@ -1,6 +1,6 @@
 # Deploying HAProxy for reverse proxy to nginx-thukee and kavita Reader.
 We have use AlmaLinux as our docker Host because Linode does not have a RHEL VPS image.
-Using HAProxy was use to focus on singular service that is to reverse proxy.
+Using HAProxy `v1.24` was used to focus on singular service that is for reverse proxy.
 1. Configuration File: `/etc/haproxy/haproxy.cfg`
 ```
 global
@@ -62,7 +62,7 @@ podman run --name thukee -p 8000:80 \
 
 # Deploying Kavita Reader Server
 
-## docker run for kavita
+## podman run for kavita
 ```
 podman run --name kavita -p 8001:5000 \
     -v /var/kavita/manga/ebooks:/manga \
@@ -70,7 +70,7 @@ podman run --name kavita -p 8001:5000 \
     --restart unless-stopped \
     -d kizaing/kavita:latest
 ```
-
+Alternatively, you can use docker compose. But since we're using AlmaLinux which is a RHEL derivative. We will stick to `podman run`.
 
 ## docker-compose for kavita
 ```
