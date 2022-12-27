@@ -69,8 +69,8 @@ Maintain the Content and Configuration on the Docker Host. When the container is
 Note: Be sure to fix the SElinux file context in your host `/var/www` and `/var/nginx/conf` directories before creating the nginx container. Not doing so would result a `403 Forbiden` http error. Or we can automatically fix this with `:z` at the end of each defined volumes.
 ```
 podman run --name thukee -p 8000:80 \
-    -v /var/www:/usr/share/nginx/html:z \
-    -v /var/nginx/conf:/etc/nginx/conf:z \
+    -v /container/nginx/www:/usr/share/nginx/html:z \
+    -v /container/nginx/conf:/etc/nginx/conf:z \
     --restart unless-stopped \
     -d nginx:stable
 ```
@@ -86,8 +86,8 @@ podman run --name thukee -p 8000:80 \
 ## podman run for kavita
 ```
 podman run --name kavita -p 8001:5000 \
-    -v /var/kavita/manga/ebooks:/manga:z \
-    -v /var/kavita/data/config:/kavita/config:z \
+    -v /container/kavita/manga/ebooks:/manga:z \
+    -v /container/kavita/data/config:/kavita/config:z \
     --restart unless-stopped \
     -d kizaing/kavita:latest
 ```
