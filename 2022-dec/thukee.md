@@ -1,4 +1,6 @@
-# Deploying HAProxy for reverse proxy to nginx-thukee and kavita Reader.
+# Documentation for Thukee Blog Site and it's requirements:
+
+## Deploying HAProxy for reverse proxy to nginx-thukee and kavita Reader.
 We have use AlmaLinux as our docker Host because Linode does not have a RHEL VPS image.
 Using HAProxy `v1.24` was used to focus on singular service that is for reverse proxy.
 1. Configuration File: `/etc/haproxy/haproxy.cfg`
