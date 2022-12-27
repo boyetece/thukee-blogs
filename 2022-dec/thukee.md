@@ -2,17 +2,17 @@
 
 ## Deploying HAProxy for reverse proxy to nginx-thukee and kavita Reader.
 We have use AlmaLinux as our docker Host because Linode does not have a RHEL VPS image.
-Using HAProxy `v1.24` was used to focus on singular service that is for reverse proxy.
+Using HAProxy `v2.4.17` was used to focus on singular service that is for reverse proxy.
 1. Configuration File: `/etc/haproxy/haproxy.cfg`
 ```
 global
     ##maxconn 50000 - max connection from running out of memory.
     ##log stdout local0 - enable log to systemd/rsyslog.
-    ##stats socket :9000 maode 650 level admin - enable runtime API, health checks, change server weights and other dynamic changes. 
+    ##stats socket :9000 mode 650 level admin - enable runtime API, health checks, change server weights and other dynamic changes. 
     
     maxconn 50000
     log stdout local0
-    stats socket :9000 maode 650 level admin
+    stats socket :9000 mode 650 level admin
 
 defaults
     ## mode http - defines the mode if it's layer 4 (`tcp` proxy) or layer 7 (`http` proxy).
@@ -31,7 +31,7 @@ defaults
 frontend www
     bind :80
     use_backend thukee if { req.hdr(host) -i alma9-thukee }
-    use_backend kavita if { req.hdr(host) -i kavita.thukee }
+    use_backend kavita if { req.hdr(host) -i kavita-thukee }
 
 backend thukee
     server thukeesite 127.0.0.1:8000
@@ -40,6 +40,25 @@ backend kavita
     server kavitareader 127.0.0.1:8001
     
 ```
+Note: Be sure to add `alma9-thukee` and `kavita-thukee`as new entry on your internal dns server if your going to use this in your internal network.
+
+Start and enable the haproxy service
+```
+~$ systemct enable --now haproxy.service
+```
+Enable `http` service in the firewall.
+```
+~$ firewall-cmd --permanent --add-service=http
+~$ firewall-cmd --list-all
+~$ firewall-cmd --reload
+```
+Test it through curl or browser should return :
+```
+503 Service Unavailable
+No server is available to handle this request.
+```
+This is because no active webserver running yet.
+
 
 # Deploying NGINX with Docker
 
@@ -47,11 +66,11 @@ backend kavita
 Maintain the Content and Configuration on the Docker Host. When the container is created we can tell Docker to mount a local directory on the Docker host to a directory in the container. The NGINX image uses the default NGINX configuration, which uses `/usr/share/nginx/html` as the container’s root directory and puts configuration files in `/etc/nginx`. For a Docker host with content in the local directory `/var/www` and configuration files in `/var/nginx/conf`.
 
 ## docker run for nginx
-Note: Be sure to fix the SElinux file context in your host `/var/www` and `/var/nginx/conf` directories before creating the nginx container. Not doing so would result a `403 Forbiden` http error.
+Note: Be sure to fix the SElinux file context in your host `/var/www` and `/var/nginx/conf` directories before creating the nginx container. Not doing so would result a `403 Forbiden` http error. Or we can automatically fix this with `:z` at the end of each defined volumes.
 ```
 podman run --name thukee -p 8000:80 \
-    -v /var/www:/usr/share/nginx/html \
-    -v /var/nginx/conf:/etc/nginx/conf \
+    -v /var/www:/usr/share/nginx/html:z \
+    -v /var/nginx/conf:/etc/nginx/conf:z \
     --restart unless-stopped \
     -d nginx:stable
 ```
@@ -67,8 +86,8 @@ podman run --name thukee -p 8000:80 \
 ## podman run for kavita
 ```
 podman run --name kavita -p 8001:5000 \
-    -v /var/kavita/manga/ebooks:/manga \
-    -v /var/kavita/data/config:/kavita/config \
+    -v /var/kavita/manga/ebooks:/manga:z \
+    -v /var/kavita/data/config:/kavita/config:z \
     --restart unless-stopped \
     -d kizaing/kavita:latest
 ```
@@ -81,8 +100,8 @@ services:
     kavita:
         image: kizaing/kavita:latest
         volumes:
-            - ./manga:/manga
-            - ./data:/kavita/config
+            - ./manga:/manga:z
+            - ./data:/kavita/config:z
         environment:
             - TZ=America/Winnipeg
         ports:
