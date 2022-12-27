@@ -57,14 +57,16 @@ podman run --name thukee -p 8000:80 \
 
 [NGINX Blog](https://www.nginx.com/blog/deploying-nginx-nginx-plus-docker/?fbclid=IwAR3HxLLX5Vm2D1mB9NIoAP-Pwovj25FZoAn8DQRJGoonKnjVasYTfPOuV6k)
 
+[NGINX Documentation](https://www.haproxy.com/documentation/hapee/latest/configuration/config-sections/backend/)
+
 
 # Deploying Kavita Reader Server
 
 ## docker run for kavita
 ```
-docker run --name kavita -p 8001:5000 \
-    -v /your/manga/directory:/manga \
-    -v /kavita/data/directory:/kavita/config \
+podman run --name kavita -p 8001:5000 \
+    -v /var/kavita/manga/books:/manga \
+    -v /var/kavita/data/config:/kavita/config \
     --restart unless-stopped \
     -d kizaing/kavita:latest
 ```
