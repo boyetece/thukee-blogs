@@ -4,9 +4,13 @@ Using HAProxy was use to focus on singular service that is to reverse proxy.
 1. Configuration File: `/etc/haproxy/haproxy.cfg`
 ```
 global
-    maxconn 50000 ##max connection from running out of memory.
-    log stdout local0 ##enable log to systemd/rsyslog.
-    stats socket :9000 maode 650 level admin ##enable runtime API, health checks, change server weights and other dynamic changes. 
+    ##maxconn 50000 - max connection from running out of memory.
+    ##log stdout local0 - enable log to systemd/rsyslog.
+    ##stats socket :9000 maode 650 level admin - enable runtime API, health checks, change server weights and other dynamic changes. 
+    
+    maxconn 50000
+    log stdout local0
+    stats socket :9000 maode 650 level admin
 
 defaults
     ## mode http - defines the mode if it's layer 4 (`tcp` proxy) or layer 7 (`http` proxy).
@@ -24,8 +28,8 @@ defaults
 
 frontend www
     bind :80
-    use_backend thukee if {hdr(host) -i thukee.com}
-    use_backend kavita if {hdr(host) -i kavita.thukee.com}
+    use_backend thukee if { req.hdr(host) -i alma9-thukee }
+    use_backend kavita if { req.hdr(host) -i kavita.thukee }
 
 backend thukee
     server thukeesite 127.0.0.1:8000
