@@ -65,7 +65,7 @@ podman run --name thukee -p 8000:80 \
 ## docker run for kavita
 ```
 podman run --name kavita -p 8001:5000 \
-    -v /var/kavita/manga/books:/manga \
+    -v /var/kavita/manga/ebooks:/manga \
     -v /var/kavita/data/config:/kavita/config \
     --restart unless-stopped \
     -d kizaing/kavita:latest
