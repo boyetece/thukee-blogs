@@ -67,7 +67,7 @@ It is possible that if selinux is on enforcing mode. it will preventing /usr/sbi
 When it is verified that it is causing it we can execute this:
 `as suggested in the journalctl logs`
 ```
-~$ setsebool haproxy_connect_any 1
+~$ setsebool -P haproxy_connect_any 1
 ```
 
 
