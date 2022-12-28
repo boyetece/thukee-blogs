@@ -59,6 +59,17 @@ No server is available to handle this request.
 ```
 This is because no active webserver running yet.
 
+## Note:
+It is possible that if selinux is on enforcing mode. it will preventing /usr/sbin/haproxy from name_connect access on the tcp_socket port 8000 and other higher port number. Thus the best way is to enable the seboolean for haproxy to enabled. You can start with the logs to verify it.
+```
+~$ journalctl -f
+```
+When it is verified that it is causing it we can execute this:
+`as suggested in the journalctl logs`
+```
+~$ setsebool haproxy_connect_any 1
+```
+
 
 # Deploying NGINX with Docker
 
