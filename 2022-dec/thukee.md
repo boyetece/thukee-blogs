@@ -1,10 +1,11 @@
 # Documentation for Thukee Blog Site and it's requirements:
 ## Background:
 ```
-[clients] -> [CloudFlare] -> [haproxy] -> [thukee website]
-    {tcp,tls,https}        tcp         http
-                                      http 
-                                       -> [kavita reader]
+[clients] -----> [CloudFlare] -----> [haproxy] ------> [thukee website]
+     {tcp,tls,https}           tcp      |        http
+                                        |         
+                                        |------------> [kavita reader]
+                                                 http
 ```
 
 
