@@ -44,8 +44,8 @@ defaults
 
 frontend www
     bind :80
-    use_backend thukee if { req.hdr(host) -i alma9-thukee }
-    use_backend kavita if { req.hdr(host) -i kavita-thukee }
+    use_backend thukee if { req.hdr(host) -i thukee.com }
+    use_backend kavita if { req.hdr(host) -i kavita.thukee.com }
 
 backend thukee
     server thukeesite 127.0.0.1:8000
@@ -54,7 +54,7 @@ backend kavita
     server kavitareader 127.0.0.1:8001
     
 ```
-Note: Be sure to add `alma9-thukee` and `kavita-thukee`as new entry on your internal dns server if your going to use this in your internal network.
+`Note: Be sure to add [`thukee.dev1`] and [`kavita-dev1`] as new entry on your internal dns server if your going to use this in your internal network.`
 
 Start and enable the haproxy service
 ```
@@ -73,8 +73,8 @@ No server is available to handle this request.
 ```
 This is because no active webserver running yet.
 
-## Note:
-It is possible that if selinux is on enforcing mode. it will preventing /usr/sbin/haproxy from name_connect access on the tcp_socket port 8000 and other higher port number. Thus the best way is to enable the seboolean for haproxy. You can start with the logs to verify it.
+`Note: It is possible that if selinux is on enforcing mode. it will preventing [`/usr/sbin/haproxy`] from name_connect access on the tcp_socket port [`8000`] and other higher port number. Thus the best way is to enable the seboolean for haproxy. You can start with the logs to verify it.`
+
 ```
 ~$ journalctl -f
 ```
@@ -91,7 +91,8 @@ When it is verified that it is causing it we can execute this:
 Maintain the Content and Configuration on the Docker Host. When the container is created we can tell Docker to mount a local directory on the Docker host to a directory in the container. The NGINX image uses the default NGINX configuration, which uses `/usr/share/nginx/html` as the container’s root directory and puts configuration files in `/etc/nginx`. For a Docker host with content in the local directory `/var/www` and configuration files in `/var/nginx/conf`.
 
 ## docker run for nginx
-Note: Be sure to fix the SElinux file context in your host `/var/www` and `/var/nginx/conf` directories before creating the nginx container. Not doing so would result a `403 Forbiden` http error. Or we can automatically fix this with `:z` at the end of each defined volumes.
+`Note: Be sure to fix the SElinux file context in your host [ `/var/www` ] and [`/var/nginx/conf`] directories before creating the nginx container. Not doing so would result a [`403 Forbiden http error`]. Or we can automatically fix this with `:z` at the end of each defined volumes.`
+
 ```
 podman run --name thukee -p 8000:80 \
     -v /container/nginx/www:/usr/share/nginx/html:z \
