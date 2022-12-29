@@ -54,7 +54,6 @@ backend kavita
     server kavitareader 127.0.0.1:8001
     
 ```
-[blue](#)
 
 `Note: Be sure to add `[thukee.dev1](#)`  and  `[kavita-dev1](#)` as new entry on your internal dns server if your going to use this in your internal network.`
 
