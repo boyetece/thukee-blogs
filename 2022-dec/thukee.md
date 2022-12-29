@@ -1,4 +1,13 @@
 # Documentation for Thukee Blog Site and it's requirements:
+## Background:
+```
+[clients] -> [CloudFlare] -> [haproxy] -> [thukee website]
+    {tcp,tls,http}        tcp         http
+                                      http 
+                                       -> [kavita reader]
+```
+
+
 
 ## Deploying HAProxy for reverse proxy to nginx-thukee and kavita Reader.
 We have use AlmaLinux as our docker Host because Linode does not have a RHEL VPS image.
