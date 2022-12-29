@@ -2,7 +2,7 @@
 ## Background:
 ```
 [clients] -> [CloudFlare] -> [haproxy] -> [thukee website]
-    {tcp,tls,http}        tcp         http
+    {tcp,tls,https}        tcp         http
                                       http 
                                        -> [kavita reader]
 ```
