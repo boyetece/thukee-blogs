@@ -1,11 +1,15 @@
 # Documentation for Thukee Blog Site and it's requirements:
 ## Background:
 ```
-[clients] -----> [CloudFlare] -----> [haproxy] ------> [thukee website]
-     {tcp,tls,https}           tcp      |        http
-                                        |         
-                                        |------------> [kavita reader]
-                                                 http
+                                                        AlmaLinux
+                                     |---------------------------------------------|
+                                     |                                             | Firewall
+[clients] -----> [CloudFlare] -----> |[haproxy] ------> [thukee website container] | Blocking:
+     {tcp,tls,https}           tcp   |   |        http    Port:8000                | 8000,8001
+                                     |   |                                         | 
+                                     |   |------------> [kavita reader container]  |
+                                     |            http    Port: 8001               |
+                                     |---------------------------------------------| 
 ```
 
 
