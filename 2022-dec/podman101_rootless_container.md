@@ -39,3 +39,9 @@ user1@server1 ~$ sudo grep AVC /var/log/audit/audit.log
 ```
 We should see SELinux permission logs related to the container.
 
+7. enable the firewall to open port 8000.
+Note: If you dont have a standalone intance of reverse-proxy then port 8000 must be opened rathar than `http service`.
+```
+user1@server1 ~$ sudo firewall-cmd --add-port=8000 --permanent
+user1@server1 ~$ sudo firewall-cmd --reload
+```
