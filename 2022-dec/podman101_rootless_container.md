@@ -1,5 +1,5 @@
 # Podman 101- rootless container
-A container that does not have a root process running in the background which run on privileged  or access. This approach is stem from a security perspective, that it is dangerous for a process to run as a root, and that it might be compromise
+A container that does not have a root access privilege running in the background. This approach stem from a security perspective, that it is dangerous for a process to run as a root, and that it might be compromise
 during its life cycle. Rootless container allow normal, unprivileged user to run container/s but without the ability to perform tasks that
 requires priviledge access.
 
@@ -31,13 +31,13 @@ user1@server1 ~$ podman run --name nginx -p 8000:80 \
 ```
 user1@server1 ~$ podman logs nginx
 ```
-This should problems if there are, such as permissions issues if any.
+If there are some problem/s, such as permissions issues if any.
 
-6. Assuming permissions issues were logged. You can check the audit.log of the host to check if SELinux is affecting the container permissions.
+6. Assuming permissions issues were logged. You can check the audit.log of the host if SELinux is affecting the container permissions.
 ```
 user1@server1 ~$ sudo grep AVC /var/log/audit/audit.log
 ```
-We should see SELinux permission logs related to the container.
+We should see SELinux permission logs related to the container and a SELinux solution will be presented on how to deal with it.
 
 7. enable the firewall to open port 8000.
 Note: If you dont have a standalone intance of reverse-proxy then port 8000 must be opened rathar than `http service`.

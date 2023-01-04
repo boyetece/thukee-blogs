@@ -1,10 +1,10 @@
 # Podman 101 - Container
 
-Container is launched with root user priviledges. This gives full access to perform administrative functions including the ability to map network ports that are lower than 1024.
+Container is launched with root user privileges. This gives full access to perform administrative functions including the ability to map network ports that are lower than 1024.
 With this, also comes with potential danger that containers are compromised due to a vulnerability of misconfiguration.
 
 
-# PRIVILEDGE Container:
+# PRIVILEGE Container:
 ## Install container-tools
 ```
 user@thukee ~$ sudo dnf search container-tools
