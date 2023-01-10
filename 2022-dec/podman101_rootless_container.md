@@ -11,7 +11,7 @@ In this series, we will focus on persitent storage with its corresponding SELinu
 ```
 user1@server1 ~$ mkdir ~/container/nginx
 ```
-`Note: If your creating a directory outside your home directory don't forget to set the `ownership`  as your own, without doing so will affect file that are save from that directory effectively unable to fetch change from your website data`
+`Note: If your creating a directory outside your home directory don't forget to set the `ownership`  as your own, without doing so will affect the file that are saved from that directory, effectively unable to fetch the changes from your website data`
 
 2. Enable Linger, if enabled for a specific user, a user manager is spawned for the user at boot and kept around after logouts. This allows users who are not logged in to run long-running services.
 ```
@@ -58,7 +58,7 @@ user1@server1 ~$ podman generate systemd --name nginx --files
 ```
 user1@server1 ~$ systemctl --user daemon-reload
 ```
-9. Enable to service.
+9. Enable the service.
 ```
 user1@server1 ~$ systemctl --user enable container-nginx.service
 ```
