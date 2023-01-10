@@ -12,10 +12,10 @@ In this series, we will focus on persitent storage with its corresponding SELinu
 user1@server1 ~$ mkdir ~/container/nginx
 ```
 `Note: If your creating a directory outside your home directory don't forget to set the `ownership`  as your own, without doing so will affect file that are save from that directory effectively unable to fetch change from your website data`
+
+2. Enable Linger, if enabled for a specific user, a user manager is spawned for the user at boot and kept around after logouts. This allows users who are not logged in to run long-running services.
 ```
-2. 
-```
-user@server1 ~$ sudo loginctl enable-linger user
+user1@server1 ~$ sudo loginctl enable-linger user1
 ```
 2. Run the conainer with `-v` option for persistent volume and add the `Z` option for the SELinux context to work with the persistent volume.
 ```
@@ -43,3 +43,24 @@ Note: If you dont have a standalone intance of reverse-proxy then port 8000 must
 user1@server1 ~$ sudo firewall-cmd --add-port=8000 --permanent
 user1@server1 ~$ sudo firewall-cmd --reload
 ```
+## This time, we have to make the container persistent upon reboot.
+
+6. Create a directory for the systemd with it's user as a subdirectory.
+
+```
+user1@server1 ~$ mkdir ~/.config/systemd/user1
+```
+7. Generate the systemd unit for the container `nginx`.
+```
+user1@server1 ~$ podman generate systemd --name nginx --files
+```
+8. Reload the systemd daemon.
+```
+user1@server1 ~$ systemctl --user daemon-reload
+```
+9. Enable to service.
+```
+user1@server1 ~$ systemctl --user enable container-nginx.service
+```
+
+`Note: The name of the service must be container-`container name`.service`
