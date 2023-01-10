@@ -1,8 +1,6 @@
 
 # Systemd Timers or Cron?
 
-August 11, 2022 by RB
-
 Timers are systemd unit files whose name ends in .timer that control .service files or events. Timers can be use as an alternative to cron. Timers have built-in support for calendar time events, and monotonic time events, and can be run asynchronously.
 
 # Benefits:
