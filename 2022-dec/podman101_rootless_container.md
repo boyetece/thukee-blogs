@@ -9,7 +9,8 @@ In this series, we will focus on persitent storage with its corresponding SELinu
 
 1. Create a directory for the persistent storage in the user1 home subdirectory.
 ```
-user1@server1 ~$ mkdir ~/container/nginx
+user1@server1 ~$ mkdir ~/container/nginx/www
+user1@server1 ~$ mkdir ~/container/nginx/conf
 ```
 `Note: If your creating a directory outside your home directory don't forget to set the `ownership`  as your own, without doing so will affect the file that are saved from that directory, effectively unable to fetch the changes from your website data`
 
