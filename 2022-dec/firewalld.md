@@ -16,7 +16,7 @@ firewalld provides a dynamically managed firewall with support for network/firew
 | `--reload` |  Reload firewall rules and keep state information. |
 | `--permanent` | set options permanently and changes are not effective immediately. |
 
-`Note: The mot important is reloading the firewalld daemon`
+`Note: The mot important is reloading the firewalld service`
 
 # Scenario 1:
 ## A simple firewall rule that allow `https` in the default zone. 
