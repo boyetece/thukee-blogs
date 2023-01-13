@@ -16,20 +16,15 @@ business demand has introduced a greater challenge.
 
 ## Capacity and performance management
 ```
-The purpose of the capacity and performance management practice is to
-ensure that services achieve agreed and expected performance, satisfying
-current and future demand in a cost-effective way.
+The purpose of the capacity and performance management practice is to ensure that services achieve agreed and expected performance, satisfying current and future demand in a cost-effective way.
 ```
 
-`Definition: `**Performance**`  -
-A measure of what is achieved or delivered by a system, person, team,
-practice, or service.
+`Definition: `**Performance**`  - 
+A measure of what is achieved or delivered by a system, person, team, practice, or service.
 `
 ## Change control
 ```
-The purpose of the change control practice is to maximize the number of
-successful service and product changes by ensuring that risks have been
-properly assessed, authorizing changes to proceed, and managing the change
+The purpose of the change control practice is to maximize the number of successful service and product changes by ensuring that risks have been properly assessed, authorizing changes to proceed, and managing the change
 schedule.
 ```
 `Definition: `**Change**`  - 
