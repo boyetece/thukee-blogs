@@ -12,7 +12,7 @@ DevOps. However, for organizations bearing a legacy of old IT architectures
 and IT management practices focused on control and cost efficiency, the new
 business demand has introduced a greater challenge.
 
-# Service management practices:
+# Service Management Practices:
 
 ## CAPACITY and PERFORMANCE MANAGEMENT
 ```
