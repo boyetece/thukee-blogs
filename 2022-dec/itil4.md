@@ -14,7 +14,7 @@ business demand has introduced a greater challenge.
 
 # Service management practices:
 
-## Capacity and performance management
+## CAPACITY and PERFORMANCE MANAGEMENT
 ```
 The purpose of the capacity and performance management practice is to ensure that services achieve agreed and expected performance, satisfying current and future demand in a cost-effective way.
 ```
@@ -22,7 +22,7 @@ The purpose of the capacity and performance management practice is to ensure tha
 `Definition: `**Performance**`  - 
 A measure of what is achieved or delivered by a system, person, team, practice, or service.
 `
-## Change control
+## CHANGE CONTROL
 ```
 The purpose of the change control practice is to maximize the number of successful service and product changes by ensuring that risks have been properly assessed, authorizing changes to proceed, and managing the change schedule.
 ```
@@ -31,14 +31,14 @@ The addition, modification, or removal of anything that could have a direct or
 indirect effect on services.
 `
 
-## Incident management
+## INCIDENT MANAGEMENT
 ```
 The purpose of the incident management practice is to minimize the negative impact of incidents by restoring normal service operation as quickly as possible.
 ```
 `Definition: `**Incident**` -
 An unplanned interruption to a service or reduction in the quality of a service.`
 
-## IT asset management
+## IT ASSET MANAGEMENT
 ```
 The purpose of the IT asset management practice is to plan and manage the
 full lifecycle of all IT assets, to help the organization:
@@ -62,7 +62,7 @@ product or service.`
 ` `**Software asset management (SAM)**`  is an aspect of IT asset management that is specifically aimed at managing the acquisition, development, release deployment, maintenance, and eventual retirement of software assets. SAM procedures provide effective management, control, and protection of software assets.
 `
 
-## Monitoring and event management
+## MONITORING and EVENT MANAGEMENT
 ```
 The purpose of the monitoring and event management practice is to systematically observe services and service components, and record and report selected changes of state identified as events. This practice identifies and prioritizes infrastructure, services, business processes, and information security events, and establishes the appropriate response to those events including responding to conditions that could lead to potential faults or incidents.
 ```
@@ -71,7 +71,7 @@ The purpose of the monitoring and event management practice is to systematically
 Any change of state that has significance for the management of a service or other configuration item (CI). Events are typically recognized through notifications created by an IT service, CI, or monitoring tool.`
 
 
-## Service configuration management
+## SERVICE CONFIGURATION MANAGEMENT
 ```
 The purpose of the service configuration management practice is to ensure that accurate and reliable information about the configuration of services, and the CIs that support them, is available when and where it is needed. This includes information on how CIs are configured and the relationships between them.
 ```
@@ -79,7 +79,7 @@ The purpose of the service configuration management practice is to ensure that a
 Any component that needs to be managed in order to deliver an IT service.`
 
 
-## Service desk
+## SERVICE DESK
 ```
 The purpose of the service desk practice is to capture demand for incident resolution and service requests. It should also be the entry point and single point of contact for the service provider with all of its users.
 ```
