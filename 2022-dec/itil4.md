@@ -24,8 +24,7 @@ A measure of what is achieved or delivered by a system, person, team, practice, 
 `
 ## Change control
 ```
-The purpose of the change control practice is to maximize the number of successful service and product changes by ensuring that risks have been properly assessed, authorizing changes to proceed, and managing the change
-schedule.
+The purpose of the change control practice is to maximize the number of successful service and product changes by ensuring that risks have been properly assessed, authorizing changes to proceed, and managing the change schedule.
 ```
 `Definition: `**Change**`  - 
 The addition, modification, or removal of anything that could have a direct or
@@ -60,30 +59,21 @@ product or service.`
 
 ` `**IT asset management (ITAM)**` is a sub-practice of asset management that is specifically aimed at managing the lifecycles and total costs of IT equipment and infrastructure.`
 
-` `**Software asset management (SAM)**`  is an aspect of IT asset management that is
-specifically aimed at managing the acquisition, development, release,
-deployment, maintenance, and eventual retirement of software assets. SAM
-procedures provide effective management, control, and protection of
-software assets.
+` `**Software asset management (SAM)**`  is an aspect of IT asset management that is specifically aimed at managing the acquisition, development, release deployment, maintenance, and eventual retirement of software assets. SAM procedures provide effective management, control, and protection of software assets.
 `
 
 ## Monitoring and event management
 ```
-The purpose of the monitoring and event management practice is to
-systematically observe services and service components, and record and
-report selected changes of state identified as events. This practice identifies and prioritizes infrastructure, services, business processes, and information security events, and establishes the appropriate response to those events, including responding to conditions that could lead to potential faults or incidents.
+The purpose of the monitoring and event management practice is to systematically observe services and service components, and record and report selected changes of state identified as events. This practice identifies and prioritizes infrastructure, services, business processes, and information security events, and establishes the appropriate response to those events including responding to conditions that could lead to potential faults or incidents.
 ```
 
 `Definition: `**Event**` - 
-Any change of state that has significance for the management of a service or
-other configuration item (CI). Events are typically recognized through
-notifications created by an IT service, CI, or monitoring tool.`
+Any change of state that has significance for the management of a service or other configuration item (CI). Events are typically recognized through notifications created by an IT service, CI, or monitoring tool.`
 
 
 ## Service configuration management
 ```
-The purpose of the service configuration management practice is to ensure
-that accurate and reliable information about the configuration of services, and the CIs that support them, is available when and where it is needed. This includes information on how CIs are configured and the relationships between them.
+The purpose of the service configuration management practice is to ensure that accurate and reliable information about the configuration of services, and the CIs that support them, is available when and where it is needed. This includes information on how CIs are configured and the relationships between them.
 ```
 `Definition: `**Configuration item**` - 
 Any component that needs to be managed in order to deliver an IT service.`
@@ -91,8 +81,7 @@ Any component that needs to be managed in order to deliver an IT service.`
 
 ## Service desk
 ```
-The purpose of the service desk practice is to capture demand for incident
-resolution and service requests. It should also be the entry point and single point of contact for the service provider with all of its users.
+The purpose of the service desk practice is to capture demand for incident resolution and service requests. It should also be the entry point and single point of contact for the service provider with all of its users.
 ```
 
 # Additional Service Management:
