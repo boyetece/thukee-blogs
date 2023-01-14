@@ -94,7 +94,7 @@ http://ServerNameOrIP:8080/index.php
 ```
 root@server~$ semanage fcontext -l | grep httpd_sys_content_t
 ```
-1. If you want to check the SELinux logs, if you suspect there's an issues relating to permissions:
+2. If you want to check the SELinux logs, if you suspect there's an issues relating to permissions:
 ```
 root@server~$ journactl -f /var/log/audit/audit.log
 ```
