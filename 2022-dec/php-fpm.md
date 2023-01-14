@@ -88,7 +88,7 @@ root@server~$ start httpd
 http://ServerNameOrIP:8080/index.php
 ```
 
-Addition Troubleshooting:
+# Addition Troubleshooting:
 
 1. If you want to check the fcontext:
 ```
