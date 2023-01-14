@@ -1,5 +1,5 @@
 # BCC-Tools
- This is a dynamic kernel tracing tools, called bcc-tools, this tool is for checking system performance - `extended Berkeley Packet Filter (eBPF)` used by system administrators.  It allows allows dynamic kernel tracing without requiring kernel modules (like systemtap) or rebooting of the kernel (as with debug kernels). It accomplishes this while maintaining minimal overhead for each trace point, making these tools an ideal way to instrument running kernels in production.
+ This is a dynamic kernel tracing tools, called bcc-tools, this tool is for checking system performance - `extended Berkeley Packet Filter (eBPF)` used by system administrators.  It allows dynamic kernel tracing without requiring kernel modules (like systemtap) or rebooting of the kernel. It accomplishes this while maintaining minimal overhead for each trace point, making these tools an ideal way to check the metrics in the kernel that are running in production.
  
 ## This is the following process when started by root on the command line:
 
