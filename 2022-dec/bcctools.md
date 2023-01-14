@@ -31,7 +31,7 @@ root@server~$ dnf install bcc-tools
 root@server~$ cd /usr/share/bcc/tools/
 root@server~$ ls
 ```
-## These are 120 list of tools available:
+## There are 120 list of tools available:
 
 | Tools: |  |  |  |  |  |  |  |
 ---| ---| ---| ---|---| ---| ---| ---|
@@ -52,7 +52,7 @@ root@server~$ ls
 | nfsdist | opensnoop | pidpersec | reset-trace | runqlen | sslsniff  | tclflow | tcplife | 
 | tcptracer | virtiostat |
 
-## To determine each description would through the `man` page.
+## To determine each description, use the `man` page.
 ```
 root@server~$ cd /usr/share/bcc/tools/
 root@server~$ man argdist
