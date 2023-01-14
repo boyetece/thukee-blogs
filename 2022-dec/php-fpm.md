@@ -1,5 +1,5 @@
 # php-fpm with Apache on RHEL 9.1
-Reason behind this documentation is that `fpm-php` is used instead of `mod_php` because, starting from release `5.3.3 in early 2010` , PHP has merged the php-fpm fastCGI process manager into its codebase. This means that secure, fast, and dependable PHP code can run now using only the stock Apache HTTPD and PHP.net releases.
+Reason behind this documentation is that `fpm-php` is used instead of `mod_php`. PHP has merged the php-fpm fastCGI process manager into its codebase. This means that secure, fast, and dependable PHP code can now run by using only the stock Apache HTTPD and PHP.net releases.
 
 ## PHP FastCGI Process Manager (FPM):
 * Search for available version of php-fpm on your repo:
