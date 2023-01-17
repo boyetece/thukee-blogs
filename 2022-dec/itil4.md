@@ -4,9 +4,9 @@ factor. If an organization takes too long to implement a new business idea, it i
 
 For service providers that have always used modern technology, this has not
 been a big challenge. They have adopted modern ways of scaling their
-resources and established appropriate practices for project and product
+resources and established appropriate **`practices`** for project and product
 management, testing, integration, deployment, release, delivery, and support
-of IT services. These practices have been documented and have triggered the
+of IT services. These **`practices`** have been documented and have triggered the
 development of new IT management movements and practices, such as
 DevOps. However, for organizations bearing a legacy of old IT architectures
 and IT management practices focused on control and cost efficiency, the new
