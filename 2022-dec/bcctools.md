@@ -50,7 +50,8 @@ root@server~$ ls
 | oomkill | phpstat | readahead | runqlat | solisten | tclcalls  | tcpdrop | tcptop | 
 | vfsstat | biotop | compactsnoop | deadlock | ext4dist | funclatency  | javaobjnew | llcstat | 
 | nfsdist | opensnoop | pidpersec | reset-trace | runqlen | sslsniff  | tclflow | tcplife | 
-| tcptracer | virtiostat |
+| tcptracer | virtiostat 
+|
 
 ## To determine each description, use the `man` page.
 ```
