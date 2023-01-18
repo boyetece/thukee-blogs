@@ -12,7 +12,8 @@ This is a method to combine or aggregate network interfaces to provide a logical
 | 3 - broadcast | Requires static Etherchannel enabled (not LACP-negotiated) |
 | `4 - 802.3ad`  | Requires LACP-negotiated Etherchannel enabled  |
 | 5 - balance-tlb  | Requires autonomous ports  |
-| 6 - balance-alb  | Requires autonomous ports  |
+| 6 - balance-alb  | Requires autonomous ports  
+|
 
 
 ## Procedure
