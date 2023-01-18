@@ -75,3 +75,24 @@ You must configure the auto-update during the creation of the container. There a
 |**`registry`** | Reaches out to the container registry to check whether a new image is available. For instance, Podman can compare registry.access.redhat.com/ubi8:8.4 on the registry with the image in the local storage. If they differ, the registry image is considered newer and is pulled down. |
 | **`local`** | It will only compare local images. For instance, if a local image has been rebuilt, containers using the previous image can easily be auto-updated.
 |
+
+Setting the label for the update: 
+
+`podman create --label io.containers.autoupdate={registry,local}`
+
+Now we can modify our container with this auto-update included:
+
+Note that we can choose **local**  or  **registry** .
+
+```
+user1@server1 ~$ podman create --name nginx -p 8000:80 \
+    -v ~/container/nginx/www:/usr/share/nginx/html:Z \
+    -v ~/container/nginx/conf:/etc/nginx/conf:Z \
+    --restart unless-stopped \
+    --label io.containers.autoupdate=registry \
+    registry.access.redhat.com/nginx:latest
+    -d nginx
+```
+
+
+[****RedHat-SySAdmin****](https://www.redhat.com/sysadmin/podman-auto-updates-rollbacks)
