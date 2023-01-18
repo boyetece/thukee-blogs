@@ -12,13 +12,13 @@ In this series, we will focus on persitent storage with its corresponding SELinu
 user1@server1 ~$ mkdir ~/container/nginx/www
 user1@server1 ~$ mkdir ~/container/nginx/conf
 ```
-`Note: If your creating a directory outside your home directory don't forget to set the `ownership`  as your own, without doing so will affect the file that are saved from that directory, effectively unable to fetch the changes from your website data`
+`Note: If your creating a directory outside your home directory don't forget to set the `**ownership**`  as your own, without doing so will affect the file that are saved from that directory, effectively unable to fetch the changes from your website data`
 
 2. Enable Linger, if enabled for a specific user, a user manager is spawned for the user at boot and kept around after logouts. This allows users who are not logged in to run long-running services.
 ```
 user1@server1 ~$ sudo loginctl enable-linger user1
 ```
-2. Run the conainer with `-v` option for persistent volume and add the `Z` option for the SELinux context to work with the persistent volume.
+2. Run the conainer with **`-v`** option for persistent volume and add the **`Z`** option for the SELinux context to work with the persistent volume.
 ```
 user1@server1 ~$ podman run --name nginx -p 8000:80 \
     -v ~/container/nginx/www:/usr/share/nginx/html:Z \
@@ -39,7 +39,7 @@ user1@server1 ~$ sudo grep AVC /var/log/audit/audit.log
 We should see SELinux permission logs related to the container and a SELinux solution will be presented on how to deal with it.
 
 5. enable the firewall to open port 8000.
-Note: If you dont have a standalone intance of reverse-proxy then port 8000 must be opened rathar than `http service`.
+Note: If you dont have a standalone intance of reverse-proxy then port 8000 must be opened rathar than  **`http service`**.
 ```
 user1@server1 ~$ sudo firewall-cmd --add-port=8000 --permanent
 user1@server1 ~$ sudo firewall-cmd --reload
@@ -51,7 +51,7 @@ user1@server1 ~$ sudo firewall-cmd --reload
 ```
 user1@server1 ~$ mkdir ~/.config/systemd/user1
 ```
-7. Generate the systemd unit for the container `nginx`.
+7. Generate the systemd unit for the container **`nginx`**.
 ```
 user1@server1 ~$ podman generate systemd --name nginx --files
 ```
@@ -64,4 +64,14 @@ user1@server1 ~$ systemctl --user daemon-reload
 user1@server1 ~$ systemctl --user enable container-nginx.service
 ```
 
-`Note: The name of the service must be container-`container name`.service`
+`Note: The name of the service must be container-**`container name`**.service`
+
+# Configure Podman for auto-update.
+You must configure the auto-update during the creation of the container. There are two labels that are valid **`registry`** and **`local`**, these are called policy as well.
+
+## Update Policy for auto-update:
+|Policy | Description|
+---| ---|
+|**`registry`** | Reaches out to the container registry to check whether a new image is available. For instance, Podman can compare registry.access.redhat.com/ubi8:8.4 on the registry with the image in the local storage. If they differ, the registry image is considered newer and is pulled down. |
+| **`local`** | It will only compare local images. For instance, if a local image has been rebuilt, containers using the previous image can easily be auto-updated.
+|
