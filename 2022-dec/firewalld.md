@@ -14,7 +14,8 @@ firewalld provides a dynamically managed firewall with support for network/firew
 | `--list-ports` | it can be either a port and protocol pair or a port range with a protocol. |
 | `--add-port=80/tcp` | Add a port number and protocol in pair. |
 | `--reload` |  Reload firewall rules and keep state information. |
-| `--permanent` | set options permanently and changes are not effective immediately. |
+| `--permanent` | set options permanently and changes are not effective immediately. 
+|
 
 `Note: The mot important is reloading the firewalld service`
 
