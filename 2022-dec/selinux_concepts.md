@@ -40,7 +40,8 @@ Common Commands:
 |setsebool |	|	|	sets selinux policy, that are defaultly defined 0 or 1|
 |getsebool| 	-a |	|	displays selinux policy, that are defaultly defined|
 |getenforce 	|0 or 1 |	|	display selinux status ENFORCING, PERMISSIVE OR DISABLED|
-|setenforce |	0 or 1 	|	|sets selinux status ENFORCING, PERMISSIVE OR DISABLED|
+|setenforce |	0 or 1 	|	|sets selinux status ENFORCING, PERMISSIVE OR DISABLED
+|
 
 ## How to check on what policy the system is set on (ENFORCING, PERMISSIVE OR DISABLED) in three ways:
 
