@@ -30,4 +30,6 @@ $ screen
 |**`shift + q`**| This will close the region that is inactive.
 |
 
+
+
 [**SCREEN REFERENCE**](https://manpages.org/screen)
