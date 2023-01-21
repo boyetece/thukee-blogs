@@ -29,3 +29,5 @@ $ screen
 |**`Tab key`**| will switch between terminal prompts.|
 |**`shift + q`**| Ctrl-a Q (note: upper case Q). This will close the region that is inactive.
 |
+
+[**SCREEN REFERENCE**](https://manpages.org/screen)
