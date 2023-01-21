@@ -27,7 +27,7 @@ $ screen
 |**`shift + s`**| This will spit the screen horizontally only without a proper prompt terminal. **`ctrl + a`** again to go to the split screen, then you can type **`c`** to create a prompt terminal.|
 |**`Shift + pipe symbol`**| This will spit the screen virtically only without a proper prompt terminal. **`ctrl + a`** again to go to the split screen, then you can type **`c`** to create a prompt terminal.|
 |**`Tab key`**| will switch between terminal prompts.|
-|**`shift + q`**| Ctrl-a Q (note: upper case Q). This will close the region that is inactive.
+|**`shift + q`**| This will close the region that is inactive.
 |
 
 [**SCREEN REFERENCE**](https://manpages.org/screen)
