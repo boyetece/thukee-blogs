@@ -3,12 +3,6 @@
 
 A full-screen window manager that multiplexes a physical terminal between several processes, typically interactive shells. Each virtual terminal provides the functions of the DEC VT100 terminal and, in addition, several control functions from the ISO 6429 (ECMA 48, ANSI X3.64) and ISO 2022 standards (e.g. insert/delete line and support for multiple character sets). There is a scrollback history buffer for each virtual terminal and a copy-and-paste mechanism that allows the user to move text regions between windows. See **`man screen`**.
 
-## Detaching and Resuming screen activiy:
-| | |
----| ---|
-|**`ctrl + d`**| To detach from the session without destroying it.|
-|**`ctrl + r`** | To resume the screen session.
-|
 
 ## Ensure that the screen package is installed before executing:
 ```
@@ -35,6 +29,15 @@ $ screen
 | **`[ctrl+a]+Q`** | | Close All Inactive Windows
 |
 
+## Detaching screen activiy:
+| Function | | Shortcut |
+---| ---| ---|
+| Detach Screen | |	**`[ ctrl+a ] + d`** |
+
+## Resuming screen activiy:
+```
+$ screen -r {screen id number}
+```
 
 
 | Function | | Shortcut |
