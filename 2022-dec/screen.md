@@ -20,14 +20,30 @@ $ screen
 **`Then Press Tab` :**
 
 
-## Here is the list of options:
-| | |
----| ---|
-|**`ctrl + a`**| will put you on the command mode. After this, you can choose what options you would want to do.|
-|**`shift + s`**| This will spit the screen horizontally only without a proper prompt terminal. **`ctrl + a`** again to go to the split screen, then you can type **`c`** to create a prompt terminal.|
-|**`Shift + pipe symbol`**| This will spit the screen virtically only without a proper prompt terminal. **`ctrl + a`** again to go to the split screen, then you can type **`c`** to create a prompt terminal.|
-|**`Tab key`**| will switch between terminal prompts.|
-|**`shift + q`**| This will close the region that is inactive.
+## Here are the list of options:
+
+|  Shortcut  |	 | Function|
+------ | ----- | ----- |
+| **`[ctrl+a]`** | 	 |	 Will put you on the command mode. After this you can choose your functions. |
+| **`[ctrl+a]+S`** | 	|	 This will spit the screen horizontally only without a proper prompt terminal. **`CTRL+A`** again to go to the split screen, then you can type **`C`**  to create a prompt terminal. |
+| **`[ctrl+a]+[tab]`** | 	|	 Will switch between terminal prompt. |
+| **`[ctrl+a]+\|`** | | Split Vertical (Top/Bottom) |
+| **`[ctrl+a]+c`** | | Create Screen/Start Shell |
+| **`[ctrl+a]+0,1,etc.`** | | Switch by Window ID |
+| **`[ctrl+]+A`** | | Rename Window |
+| **`[ctrl+a]+X`** | | Close Active Window |
+| **`[ctrl+a]+Q`** | | Close All Inactive Windows
+|
+
+
+
+| Function | | Shortcut |
+---| ---| ---|
+| Detach Screen | |	**`[ ctrl+a ] + d`** |
+| Quit/Kill Screen || **`[ ctrl+a ] + k`** |
+| Switch to Next | | **`[ ctrl+a ] + n`** |
+| Switch to Previous | | **`[ ctrl+a ] + p`** |
+| All Keybindings | | **`[ ctrl+a ] + ?`**
 |
 
 
