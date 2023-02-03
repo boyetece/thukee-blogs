@@ -1,5 +1,18 @@
 # Zabbix 6.0 LTS Deployment for RHEL9
 
+## Set your timezone to your appropriate location.
+```
+server~$ timedatectl set-timezone America/Winnipeg
+```
+## If SELinux status enabled in enforcing mode, you need to execute the following commands to enable communication between Zabbix frontend and server
+```
+server~$ # setsebool -P httpd_can_connect_zabbix on 
+```
+`If the database is accessible over network (including 'localhost' in case of PostgreSQL), you need to allow Zabbix frontend to connect to the database remotely.` 
+```
+server~$ setsebool -P httpd_can_network_connect_db on
+```
+
 ## Update you RHEL system.
 ```
 server~$ dnf update
