@@ -62,6 +62,7 @@ password
 mysql> create database zabbix character set utf8mb4 collate utf8mb4_bin;
 mysql> create user zabbix@localhost identified by 'password';
 mysql> grant all privileges on zabbix.* to zabbix@localhost;
+mysql> set global log_bin_trust_function_creators = 1;
 mysql> quit;
 ```
 ## Since creating the database has without data and schema, we will need to import an existing schema and data to the newly created zabbix user identified by using `zabbix` password.
@@ -71,6 +72,14 @@ server~$ zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --defaul
 ## Note: 
 1. You will be prompted with a password, use the password that you have assigned to the zabbix user.
 1. This will take a couple of minutes to generate.`
+
+## Disable log_bin_trust_function_creators option after importing database schema.
+```
+server~$ mysql -uroot -p
+password
+mysql> set global log_bin_trust_function_creators = 0;
+mysql> quit; 
+```
 
 ## We will then add a password for the newly create database configuration for zabbix server from the imported schema. This password is should be the same as what the zabbix user has.
 ```
