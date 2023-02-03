@@ -39,7 +39,7 @@ server~$ /usr/bin/mysql_secure_installation
 `see tuning mysql for zabbix`
 
 # Zabbix Installation Guide:
-The following procedure below was taken from the official Zabbix Instalaltion Guide.
+The following procedure below is taken from the official Zabbix Instalaltion Guide.
 
 [**Zabbix Installation Guide**](https://www.zabbix.com/download?zabbix=6.2&os_distribution=red_hat_enterprise_linux&os_version=9&components=server_frontend_agent&db=mysql&ws=apache)
 
