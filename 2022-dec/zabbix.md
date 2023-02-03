@@ -23,6 +23,10 @@ server~$ dnf clean all
 server~$ dnf info mysql-server
 server~$ dnf install mysql-server
 ```
+## Enable and start the MySQL instance.
+```
+server~$ systemctl enable --now mysqld
+```
 
 ## Securing the database with built-in security installation binary.
 ```
