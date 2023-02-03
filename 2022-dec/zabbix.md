@@ -85,6 +85,8 @@ server~$ systemctl enable --now zabbix-server zabbix-agent httpd php-fpm
 http://ip-address/zabbix
 ```
 These is to continue the final setup of the Zabbix server.
-
+```
 Default Login: Admin
+
 Default Password: zabbix
+```
