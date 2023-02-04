@@ -47,6 +47,12 @@ The following procedure below is taken from the official Zabbix Instalaltion Gui
 
 [**Zabbix Installation Guide**](https://www.zabbix.com/download?zabbix=6.2&os_distribution=red_hat_enterprise_linux&os_version=9&components=server_frontend_agent&db=mysql&ws=apache)
 
+## Disable Zabbix packages provided by EPEL, if you have it installed. Edit file /etc/yum.repos.d/epel.repo and add the following statement.
+```
+[epel]
+...
+excludepkgs=zabbix*
+```
 ## We will now install the zabbix repository.
 ```
 server~$ rpm -Uvh https://repo.zabbix.com/zabbix/6.2/rhel/9/x86_64/zabbix-release-6.2-3.el9.noarch.rpm
