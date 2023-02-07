@@ -117,7 +117,9 @@ Default Password: zabbix
 * Configure the zabbix agent config file to point to the zabbix server.
 `/etc/zabbix/zabbix_agentd.conf`
 
-## Procdures:
+## Note: You can also do this using ansible configuration management if there are multiple hosts to be monitored. 
+
+## Procedures:
 1. Set the map according to your location.
 1. Setup admin user.
 1. Configuration -> Discovery -> Set the local subnet and Enable it. Checks -> Add -> check type = icmp ping, http, ssh. Update Interval = 5m. Click Add and Update.
@@ -126,3 +128,9 @@ Default Password: zabbix
 1. Operations -> Add -> Operation Detail = Add Host and Click Add.
 1. Monitoring -> Discovery (Check the newly discovered End points/Servers.)
 1. Monitoring -> Hosts -> Click any Host -> Configuration -> Input Hostname, Visible Name, Template, Host Group, Enable it -> Click Update.
+
+## Sending email Norification:
+
+1. Administration -> Media Type -> Type = Email(HTML) [setup your smtp connection]
+1. Users -> Admin -> Media -> Media Add -> Type = Email(HTML) -> Click Add
+1. Configurations -> Actions -> Trigger Actions -> Report Problems to Zabbix Adminsitrators -> Conditions Add -> Type = Trigger Severity, Operator = Is greater than or equals, Severity = High -> Click Add. 
