@@ -109,3 +109,20 @@ Default Login: Admin
 
 Default Password: zabbix
 ```
+
+# Zabbix Setup Work Flow
+`Prerequisites:`
+* Setup your DNS and DHCP server
+* Install zabbix-agent on all hosts to be monitored by the zabbix server.
+* Configure the zabbix agent config file to point to the zabbix server.
+`/etc/zabbix/zabbix_agentd.conf`
+
+## Procdures:
+1. Set the map according to your location.
+1. Setup admin user.
+1. Configuration -> Discovery -> Set the local subnet and Enable it. Checks -> Add -> check type = icmp ping, http, ssh. Update Interval = 5m. Click Add and Update.
+1. Action -> Discovery Actions -> Create Action.
+1. In the Create Action ->  Name: Add Host in LAN Automatically, In Conditions -> Add Type = Discovery Rule and click Add.
+1. Operations -> Add -> Operation Detail = Add Host and Click Add.
+1. Monitoring -> Discovery (Check the newly discovered End points/Servers.)
+1. Monitoring -> Hosts -> Click any Host -> Configuration -> Input Hostname, Visible Name, Template, Host Group, Enable it -> Click Update.
