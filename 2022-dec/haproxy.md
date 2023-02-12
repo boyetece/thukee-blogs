@@ -58,11 +58,11 @@ backend allservers
 ## Installing LetsEncrypt and creating a certificate.
 
 ```
-$ dnf install letsencrypt
+$ dnf install certbot python3-certbot-haproxy
 ```
-## Create Certificate:
+## Create a single domain certificate only (not a wildcard certificate):
 ```
-$ certbot certonly --standalone
+$ certbot --nginx -d thukee.com
 ```
 ## In This stage you will be promted with the following:
 1. email
