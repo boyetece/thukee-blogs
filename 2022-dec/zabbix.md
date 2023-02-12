@@ -134,3 +134,43 @@ Default Password: zabbix
 1. Administration -> Media Type -> Type = Email(HTML) [setup your smtp connection]
 1. Users -> Admin -> Media -> Media Add -> Type = Email(HTML) -> Click Add
 1. Configurations -> Actions -> Trigger Actions -> Report Problems to Zabbix Adminsitrators -> Conditions Add -> Type = Trigger Severity, Operator = Is greater than or equals, Severity = High -> Click Add. 
+
+# Zabbix SNMPv3
+Prerequisites:
+Inside the `/etc/snmp/snmpd.conf` should have the following directives:
+
+1. agentaddress udp:161
+1. view systemonly included .1.3.6.1.2.1
+1. view systemonly included .1.3.6.1.4.1
+1. 
+
+
+
+On an ubuntu system:
+```
+$ sudo apt install libsnmp-dev
+```
+
+```
+net-snmp-config --create-snmpv3-user -ro -a SHA-512 -A "myauthphrase" -x AES -X "myprivphrase" authPrivUser
+```
+
+Add the directive inside the `/etc/snmp/snmpd.conf` configuration file.
+```
+rouser authPrivUser authpriv -V systemonly
+```
+Restart the system:
+```
+$ systemctl restart snmpd.service
+$ systemctl status snmpd.service
+```
+
+To test it locally on the ubuntu system:
+```
+$ snmpget -v 3 -u authPrivUser -l authpriv -a SHA-512 -A myauthphrase -x AES -X myprivphrase 127.0.0.1 1.3.6.1.2.1.1.1.0
+```
+
+To test from the zabbix server:
+```
+$ snmpget -v 3 -u authPrivUser -l authpriv -a SHA-512 -A myauthphrase -x AES -X myprivphrase <IP of SNMPv3 host> 1.3.6.1.2.1.1.1.0
+```
