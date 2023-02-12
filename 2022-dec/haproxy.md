@@ -62,7 +62,7 @@ $ dnf install certbot python3-certbot-haproxy
 ```
 ## Create a single domain certificate only (not a wildcard certificate):
 ```
-$ certbot --nginx -d thukee.com
+$ certbot --nginx -d thukee.com --register-unsafely-without-email
 ```
 ## In This stage you will be promted with the following:
 1. email
@@ -70,6 +70,16 @@ $ certbot --nginx -d thukee.com
 3. share your details
 4. you domain name
 5. It tells that the private and public certificates are generated.
+6. No redirect or redirect
+7. Append the configuration file with letsencrypt public and private keys.
 
-Copy the location of the certificates in a directory of your choosing and combine them using `cat` and `tee` command with pipe between them. Then, copy the location of the new combined certificate file `.pem` to `/etc/haproxy/haproxy.cfg` file (as seen above example). The `alpn h2,http/1.1` beside it means Application Layer Protocol Notification that supports H2 and HTTP 1.1.
+## Restart the Reverse Proxy:
+```
+$ systemctl restart haproxy.service
+```
+
+## Renewing your Certificate:
+```
+$ certbot renew --dry-run
+```
 
