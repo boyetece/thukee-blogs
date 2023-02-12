@@ -174,3 +174,18 @@ To test from the zabbix server:
 ```
 $ snmpget -v 3 -u authPrivUser -l authpriv -a SHA-512 -A myauthphrase -x AES -X myprivphrase <IP of SNMPv3 host> 1.3.6.1.2.1.1.1.0
 ```
+Now you can configure the zabbix server to query snmpv3 service for the host.
+```
+Parameters:
+1. templates = Linux SNMP
+1. Groups = Linux server
+1. Interfaces = {host IP address}; {Port=161}
+1. SNMPversion = SNMPv3
+1. Security name = authPrivUser
+1. security level = authPriv
+1. Authentication protocol = SHA512
+1. Authentication passphrase = myauthphrase
+1. Privacy protocol = AES128
+1. Privacy passphrase = myprivphrase
+1. Tick -> USe bulk request
+```
