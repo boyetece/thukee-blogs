@@ -29,7 +29,7 @@
 ~$ sudo chown -R www-data:www-data /var/www/dokuwiki
 ```
 
-## Change Document Root In Apache To Point To /var/www/dokuwiki.
+## Change document root in Apache to point to /var/www/dokuwiki.
 ```
 ~$ sudo vim /etc/apache2/sites-enabled/000-default.conf
 ```
@@ -39,11 +39,11 @@ DocumentRoot /var/www/html
 with
 DocumentRoot /var/www/dokuwiki
 ```
-## Change AllowOverrides Setting In Apache2 To Use .htaccess files For Security.
+## Change allowOverrides setting in apache to use .htaccess files for security.
 ```
 ~$ sudo vim /etc/apache2/apache2.conf
 ```
-## For directory /var/www/ and replace.
+## For directory `/var/www/` and replace.
 ```
 AllowOverride None
 with
@@ -52,7 +52,7 @@ AllowOverride All
 
 ## Restart apache service
 ```
-~$ sudo service apache2 restart
+~$ sudo systemctl restart apache2
 ```
 ## Visit http://ip-address/install.php to initially configure your DokuWiki.
 
