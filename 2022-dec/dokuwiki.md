@@ -31,7 +31,7 @@
 
 ## Change Document Root In Apache To Point To /var/www/dokuwiki.
 ```
-~$ sudo vim /etc/apache2/sites-enabled/000*.conf
+~$ sudo vim /etc/apache2/sites-enabled/000-default.conf
 ```
 ## Replace it with the following:
 ```
@@ -50,13 +50,13 @@ with
 AllowOverride All
 ```
 
-## Restart Apache2 Service
+## Restart apache service
 ```
 ~$ sudo service apache2 restart
 ```
-## Visit http://IP-address/install.php to initially configure your DokuWiki.
+## Visit http://ip-address/install.php to initially configure your DokuWiki.
 
-## Delete The Install.php File After Finished Installing
+## Remove the install.php file after done installing.
 ```
 ~$ sudo rm /var/www/dokuwiki/install.php
 ```
